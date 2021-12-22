@@ -1,0 +1,15 @@
+<header class="masthead">
+  <div class="masthead-content text-white">
+    <div class="container px-5">
+      <h1 class="masthead-heading mb-0"><strong>Listado de personajes</strong></h1>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 py-4" *ngFor="let character of characters">
+      <app-component-card [character]="character"></app-component-card>
+    </div>
+  </div>
+</div>

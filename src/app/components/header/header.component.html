@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container px-5">
+        <a class="navbar-brand" routerLink="/">App Rick & Morty <small class="text-danger">by cartes</small></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+            </ul>
+            <div class="form-inline ms-lg-5 col-xs-12 col-lg-4">
+                <app-searcher (idClicked)="onIdClicked($event)"></app-searcher>
+            </div>
+        </div>
+    </div>
+</nav>

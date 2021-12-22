@@ -1,0 +1,20 @@
+header.masthead {
+  padding-top: calc(5rem + 55px);
+	padding-bottom: 5rem;
+	position: relative;
+	overflow: hidden;
+	padding-top: calc(5rem + 72px);
+	padding-bottom: 5rem;
+	background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: scroll;
+	background-size: cover;
+
+  .masthead-content {
+    font-size: 3rem;
+    @media (max-width: 450px) {
+      font-size: 2.75rem;
+    }
+  }
+}

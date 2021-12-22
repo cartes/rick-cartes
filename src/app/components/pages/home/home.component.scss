@@ -1,0 +1,48 @@
+header.masthead {
+	padding-top: calc(10rem + 55px);
+	padding-bottom: 10rem;
+	position: relative;
+	overflow: hidden;
+	padding-top: calc(7rem + 72px);
+	padding-bottom: 7rem;
+	background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: scroll;
+	background-size: cover;
+
+    .masthead-content .masthead-heading {
+        font-size: 6rem;
+        font-weight: 100;
+
+        strong {
+            font-weight: 900;
+        }
+
+        @media (max-width: 470px) {
+            font-size: 4rem;
+        }
+    }
+
+    .btn-xl {
+        text-transform: uppercase;
+        padding: 1.5rem 3rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #ee0979;
+        border-color: #ee0979;
+
+        &:hover {
+            color: #fff;
+            background-color: #ca0867;
+            border-color: #be0761;
+        }
+    
+    }
+}
+

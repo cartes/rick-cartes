@@ -1,0 +1,39 @@
+        <div class="card text-white card-has-bg click-col" style="background-image:url('{{character.image}}');">
+          <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street"
+            alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+          <div class="card-img-overlay d-flex flex-column">
+            <div class="card-body">
+              <small class="card-meta mb-2">{{character.species}}</small>
+              <h4 class="card-title mt-0 "><a class="text-white"
+                  [routerLink]="['/character', character.id]">{{character.name}}</a></h4>
+              <div class="row mt-4">
+                <div class="col-6">
+                <small class="col-12">
+                  <fa-icon [icon]="fontsIcons.faClock"></fa-icon> {{character.created | date}}
+                </small>
+                <br>
+                <small class="col-12">
+                  <fa-icon [icon]="fontsIcons.faGlobe"></fa-icon> {{character.location.name}}
+                </small>
+              </div>
+                <div class="col-6 justify-content-center" *ngIf="detail">
+                  <img src="{{character.image}}" alt="{{character.name}}" class="w-75 border rounded border-light">
+                </div>
+              </div>
+              <br>
+              <span class="badge" [ngClass]="{
+                  'bg-success': character.status === 'Alive',
+                  'bg-danger': character.status === 'Dead',
+                  'bg-secondary': character.status === 'unknown'
+                }">Status: {{character.status}}</span>
+            </div>
+            <div class="card-footer">
+              <div class="media">
+                <div class="media-body">
+                  <h6 class="my-0 text-white d-block">{{character.gender}}</h6>
+                  <small *ngIf="character.type">Tipo: {{character.type}}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>

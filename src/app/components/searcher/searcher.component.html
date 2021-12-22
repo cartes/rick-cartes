@@ -1,0 +1,36 @@
+<div class="position-relative">
+  <input #inputSearch type="text" autofocus class="form-control-lg" placeholder="Buscar..."
+    (keyup)="onSearch(inputSearch.value)">
+
+  <div id="list-group" *ngIf="search && characters && characters.length >= 1"
+    class="display-results row position-absolute w-100">
+    <div class="col-12 bg-light p-0">
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-start"
+          *ngFor="let character of characters" [routerLink]="['/character', character.id]"
+          (click)="onClick(character.id)">
+          <div>
+            <img width="40" [src]="character.image" [alt]="character.name" />
+          </div>
+          <div class="ms-2 me-auto">
+            <h6 class="m-0">{{character.name}}</h6>
+            <small class="m-0">Origen: <strong>{{character.location.name}}</strong></small>
+          </div>
+          <span class="badge rounded-pill" [ngClass]="{
+              'bg-success': character.status === 'Alive',
+              'bg-danger': character.status === 'Dead',
+              'bg-secondary': character.status === 'unknown'
+            }"><small>{{character.status | uppercase}}</small></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="list-group" class="display-results row position-absolute w-100" *ngIf="search && characters.length == 0">
+    <div class="col-12 bg-light p-0">
+      <div class="list-group">
+        <h4 class="list-group-item">Sin resultados...</h4>
+      </div>
+    </div>
+  </div>
+
+</div>

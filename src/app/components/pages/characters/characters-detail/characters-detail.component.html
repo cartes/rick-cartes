@@ -1,0 +1,17 @@
+<header class="masthead" *ngIf="character$ | async as character">
+  <div class="masthead-content text-white">
+    <div class="container px-5">
+      <h1 class="d-inline-block masthead-heading mb-0"><strong>Detalle {{character.name}}</strong></h1>
+      <a class="d-inline-block btn btn-primary btn-xl rounded-pill ms-2" routerLink="/characters/list">&laquo; Volver al listado</a>
+
+    </div>
+  </div>
+</header>
+<div class="container mt-5">
+  <div class="row justify-content-center" *ngIf="character$ | async as character">
+    <div class="col-md-4 col-12">
+      <app-component-card [character]="character" [detail]="detail"></app-component-card>
+    </div>
+  </div>
+
+</div>
