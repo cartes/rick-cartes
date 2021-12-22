@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -26,6 +26,7 @@ export class CharactersDetailComponent implements OnInit {
   ) {
     this.onUrlChanged();
   }
+
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {

@@ -6,6 +6,7 @@ export interface Character {
     gender: string,
     created: string,
     status: string,
+    episode: object,
+    origin: any,
     [location: string]: any
-
 }

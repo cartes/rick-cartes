@@ -30,3 +30,20 @@ header.masthead {
   }
 
 }
+
+.meta-data {
+  padding: 1rem;
+	background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+  border-radius:20px;
+}
+div.data {
+  h4.text-light {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #5a0038 !important;
+  }
+  h5.text-light {
+    font-weight: 400;
+    font-size: .9rem;
+  }
+}

@@ -2,6 +2,7 @@ import { CharactersListComponent } from '@characters/characters-list/characters-
 import { CharactersDetailComponent } from "@characters/characters-detail/characters-detail.component";
 import { CharacterCardComponent } from './character-card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -18,7 +19,8 @@ const componentes = [
   imports: [
     CommonModule,
     RouterModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    InfiniteScrollModule
   ],
   exports: [... componentes]
 })

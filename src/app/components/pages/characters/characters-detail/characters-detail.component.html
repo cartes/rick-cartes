@@ -2,7 +2,8 @@
   <div class="masthead-content text-white">
     <div class="container px-5">
       <h1 class="d-inline-block masthead-heading mb-0"><strong>Detalle {{character.name}}</strong></h1>
-      <a class="d-inline-block btn btn-primary btn-xl rounded-pill ms-2" routerLink="/characters/list">&laquo; Volver al listado</a>
+      <a class="d-inline-block btn btn-primary btn-xl rounded-pill ms-2" routerLink="/characters/list">&laquo; Volver al
+        listado</a>
 
     </div>
   </div>
@@ -11,6 +12,36 @@
   <div class="row justify-content-center" *ngIf="character$ | async as character">
     <div class="col-md-4 col-12">
       <app-component-card [character]="character" [detail]="detail"></app-component-card>
+    </div>
+    <div class="col-md-6 col-12 meta-data">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-left">
+            Otros datos
+          </h2>
+        </div>
+      </div>
+      <div class="row p-3 data">
+        <div class="col-3">
+          <h4 class="text-center text-light">
+            {{character.name}}
+          </h4>
+          <h5 class="text-center text-light" *ngIf="character.episode.length == 1">
+            Ha aparecido en solo un episodio
+          </h5>
+          <h5 class="text-center text-light" *ngIf="character.episode.length > 1">
+            Ha aparecido en {{character.episode.length}} episodios
+          </h5>
+        </div>
+        <div class="col-3">
+          <h4 class="text-center text-light">
+            Su origen es
+          </h4>
+          <h5 class="text-center text-light">
+            {{character.origin.name}}
+          </h5>
+        </div>
+      </div>
     </div>
   </div>
 

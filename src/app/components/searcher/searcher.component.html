@@ -13,7 +13,7 @@
             <img width="40" [src]="character.image" [alt]="character.name" />
           </div>
           <div class="ms-2 me-auto">
-            <h6 class="m-0">{{character.name}}</h6>
+            <h6 class="m-0">{{character.name | slice: 0:18 }}</h6>
             <small class="m-0">Origen: <strong>{{character.location.name}}</strong></small>
           </div>
           <span class="badge rounded-pill" [ngClass]="{
