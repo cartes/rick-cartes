@@ -8,6 +8,16 @@
   </header>
   <div class="container">
     <div class="row">
+      <div class="col-xs-12 py-2">
+        <select class="form-control" #t (change)="onSortByName(t.value)">
+          <option selected>Ordenar por:</option>
+          <option value="0">ID</option>
+          <option value="1">Nombre</option>
+          <option value="2">Genero</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4 py-4" *ngFor="let character of characters">
         <app-component-card [character]="character"></app-component-card>
       </div>

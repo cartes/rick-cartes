@@ -2,11 +2,13 @@ import { CharactersListComponent } from '@characters/characters-list/characters-
 import { CharactersDetailComponent } from "@characters/characters-detail/characters-detail.component";
 import { CharacterCardComponent } from './character-card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from '@angular/router';
+
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { OrderModule } from 'ngx-order-pipe';
 
 const componentes = [
   CharactersListComponent,
@@ -20,7 +22,8 @@ const componentes = [
     CommonModule,
     RouterModule,
     FontAwesomeModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    OrderModule
   ],
   exports: [... componentes]
 })

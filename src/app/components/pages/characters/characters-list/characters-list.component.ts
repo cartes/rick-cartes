@@ -6,6 +6,8 @@ import { TrackHttpError } from '@app/share/models/TrackHttpError';
 import { CharacterService } from '@app/share/services/character.service';
 import { take } from 'rxjs/operators';
 
+import { OrderPipe } from 'ngx-order-pipe';
+
 type RequestInfo = {
   next: any
 };
@@ -33,6 +35,7 @@ export class CharactersListComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document,
     private charService: CharacterService,
     private route: ActivatedRoute,
+    private orderPipe: OrderPipe,
   ) {
     this.queryCharacter();
    }
@@ -60,12 +63,24 @@ export class CharactersListComponent implements OnInit {
     }
   }
 
+  onSortByName(opcion: any): void {
+    const character = this.characters;
+    if (opcion == 1) {
+      this.characters = this.orderPipe.transform(this.characters, 'name');
+    } else if (opcion == 2) {
+      this.characters = this.orderPipe.transform(this.characters, 'gender');
+    } else {
+      this.characters = this.orderPipe.transform(this.characters, 'id');;
+    }
+  }
+
   private queryCharacter(): void {
     this.route.queryParams.pipe(take(1)).subscribe(() => {
         this.query = '';
         this.getDataFromCharService();
       });
   }
+
 
   private getDataFromCharService(): void {
     this.charService
@@ -76,6 +91,7 @@ export class CharactersListComponent implements OnInit {
           if(res?.results?.length) {
             const {info, results} = res;
             this.characters = [...this.characters, ...results];
+
             console.log(this.characters);
             this.info = info;
           } else {
