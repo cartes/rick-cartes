@@ -23,9 +23,15 @@ export class CharacterService {
     return this.http.get<Character[]>(peticion).pipe(catchError((err) => this.handleHttpError(err)));
   }
   // obtener detalle del personaje
-  getCharacterDetail(id: number) {
+  getCharacterDetail(id: any) {
     const peticion = `${environment.apiURL}character/${id}`;
     return this.http.get<Character>(peticion).pipe(catchError((err) => this.handleHttpError(err)));
+  }
+
+  getNumberOfCharacters() {
+    const peticion= `${environment.apiURL}character/`;
+    return this.http.get<Character>(peticion).pipe(catchError((err) => this.handleHttpError(err)));
+
   }
 
   private handleHttpError( error: HttpErrorResponse): Observable<TrackHttpError> {

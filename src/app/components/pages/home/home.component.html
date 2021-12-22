@@ -11,3 +11,16 @@
     <div class="bg-circle-3 bg-circle"></div>
     <div class="bg-circle-4 bg-circle"></div>
 </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-12">
+        <h2 class="text-secondary text-center my-4">Algunos personajes para que conozcas</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 py-4" *ngFor="let character of characters">
+        <app-component-card [character]="character"></app-component-card>
+      </div>
+    </div>
+  </div>
